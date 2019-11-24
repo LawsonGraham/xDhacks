@@ -22,9 +22,7 @@ var sdpConstraints = {
 
 /////////////////////////////////////////////
 
-var room = 'foo';
-// Could prompt for room name:
-// room = prompt('Enter room name:');
+var room = prompt('Enter room name:');
 
 var socket = io.connect();
 
@@ -94,8 +92,8 @@ var localVideo = document.querySelector('#localVideo');
 var remoteVideo = document.querySelector('#remoteVideo');
 
 navigator.mediaDevices.getUserMedia({
-  audio: true,
-  video: true
+  video: true,
+  audio: true
 })
 .then(gotStream)
 .catch(function(e) {
@@ -113,7 +111,8 @@ function gotStream(stream) {
 }
 
 var constraints = {
-  video: true
+  video: true,
+  audio: true
 };
 
 console.log('Getting user media with constraints', constraints);
